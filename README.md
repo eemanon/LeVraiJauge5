@@ -40,6 +40,7 @@ Le modificateur de la méthode est protected, il le faut juste dans les sous-clas
 Pourquoi l’appel au constructeur de la classe de base est-il nécessaire ?
 - le constructeur de la classe de base de base ne prend pas d'argument. Pour notre usage il est nécessaire qu'il soit appelé avec
 des paramètres. D'où la nécessité.
+
 Si le corps du constructeur de PassagerStandard est vide, vous obtenez un message d’erreur. Expliquez ce message d’erreur.
 - Si la classe de base n'a pas de constructeur, elle en a un par défaut (sans arguments) qui est appelé. Si un constructeur est
 implementé dans la classe de base, le constructeur "défaut" n'est plus dispo et du coup toutes les classes filles doivent appelé
