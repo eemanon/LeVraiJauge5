@@ -28,3 +28,25 @@ ne pas copier du tout. Très bien!
 Quel code dupliqué?
 - Le code pour tester les passagers de classe fille
 
+## 2 Une classe de base abstraite
+Pour pouvoir redéfinir la méthode nouvelArret() dans les sous-classes, il faut avoir accès à la valeur de la variable qui stocke la destination.
+Comment la rendre accessible aux classes dérivées?
+- par un getter ordinaire, ou changer le modificateur de la variable en public ou protected
+Dans quel cas est-il préférable de définir une méthode qui renvoie sa valeur ? Quel est le modificateur d’accès de cette méthode ?
+- puisque mettre public une variable est une mauvaise pratique, nous allons traiter la question de protected - il est préférable
+d'avoir une méthode getter dans les cas ou on ne veut pas permettre l'accès écriture à la variable en question. 
+Le modificateur de la méthode est protected, il le faut juste dans les sous-classes.
+
+Pourquoi l’appel au constructeur de la classe de base est-il nécessaire ?
+- le constructeur de la classe de base de base ne prend pas d'argument. Pour notre usage il est nécessaire qu'il soit appelé avec
+des paramètres. D'où la nécessité.
+Si le corps du constructeur de PassagerStandard est vide, vous obtenez un message d’erreur. Expliquez ce message d’erreur.
+- Si la classe de base n'a pas de constructeur, elle en a un par défaut (sans arguments) qui est appelé. Si un constructeur est
+implementé dans la classe de base, le constructeur "défaut" n'est plus dispo et du coup toutes les classes filles doivent appelé
+le constructeur implementé. Si le constructeur sans paramètres n'est pas implémenté dans la classe de base, un tentative appel
+à partir d'une classe de fille échoue (et donc aussi l'appel automatique du constructeur "défaut").
+
+
+
+
+

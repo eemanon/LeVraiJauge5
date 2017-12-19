@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 import tec.EtatPassager.Etat;
 
-class PassagerStandardTest implements Transport{
+public class PassagerStandardTest implements Transport{
 	
 	@Before
 	public void initialiser() throws Exception{

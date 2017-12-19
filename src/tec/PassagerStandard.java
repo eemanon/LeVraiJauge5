@@ -7,65 +7,17 @@ import tec.EtatPassager.Etat;
  * 
  */
 
-public class PassagerStandard implements Passager, Usager{
-	private EtatPassager etat;
-	private String nom;
-	private int destination;
-	
+public class PassagerStandard extends PassagerAbstrait implements Passager, Usager{	
 	public PassagerStandard(String string, int i) {
-		etat = EtatPassager.creerEtatPassager(Etat.dehors);
-		this.nom = string;
-		this.destination = i;
+		super(string, i);
 	}
 	public PassagerStandard(int destination) {
 		this(PassagerStandard.class.toString()+destination, destination);
 	}
-	@Override 
-	public String nom() {
-		return nom;
-	}
-
-	@Override
-	public boolean estDehors() {
-		if (etat.estExterieur())
-			return true;
-		return false;
-	}
-
-	@Override
-	public boolean estAssis() {
-		if(etat.estAssis())
-			return true;
-		return false;
-	}
-
-	@Override
-	public boolean estDebout() {
-		if(etat.estDebout())
-			return true;
-		return false;
-	}
-
-	@Override
-	public void accepterSortie() {
-		etat.setMonEtat(Etat.dehors);
-	}
-
-	@Override
-	public void accepterPlaceAssise() {
-		etat.setMonEtat(Etat.assis);
-		
-	}
-
-	@Override
-	public void accepterPlaceDebout() {
-		etat.setMonEtat(Etat.debout);
-		
-	}
 
 	@Override
 	public void nouvelArret(Bus bus, int numeroArret) {
-		if(numeroArret==this.destination)
+		if(numeroArret==this.getDestination())
 			bus.demanderSortie(this);	
 		if(this.estAssis())
 			bus.demanderPlaceDebout(this);
@@ -77,10 +29,5 @@ public class PassagerStandard implements Passager, Usager{
 		b.demanderPlaceAssise(this);
 		if(this.estDehors())
 			b.demanderPlaceDebout(this);
-	}
-
-	@Override
-	public String toString() {
-		return nom+" "+etat.toString();
 	}
 }
