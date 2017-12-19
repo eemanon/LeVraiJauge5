@@ -32,9 +32,9 @@ Quel code dupliqué?
 Pour pouvoir redéfinir la méthode nouvelArret() dans les sous-classes, il faut avoir accès à la valeur de la variable qui stocke la destination.
 Comment la rendre accessible aux classes dérivées?
 - par un getter ordinaire, ou changer le modificateur de la variable en public ou protected
+
 Dans quel cas est-il préférable de définir une méthode qui renvoie sa valeur ? Quel est le modificateur d’accès de cette méthode ?
-- puisque mettre public une variable est une mauvaise pratique, nous allons traiter la question de protected - il est préférable
-d'avoir une méthode getter dans les cas ou on ne veut pas permettre l'accès écriture à la variable en question. 
+- puisque mettre public une variable est une mauvaise pratique, nous allons traiter la question de protected - il est préférable d'avoir une méthode getter dans les cas ou on ne veut pas permettre l'accès écriture à la variable en question. 
 Le modificateur de la méthode est protected, il le faut juste dans les sous-classes.
 
 Pourquoi l’appel au constructeur de la classe de base est-il nécessaire ?
