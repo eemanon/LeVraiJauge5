@@ -67,7 +67,7 @@ Pourquoi faut-il mieux déclarer les autres méthodes de la classes PassagerAbstra
 
 ## 4 Factoriser les Tests
 3. Sept tests sont exéctés.
-
+ 
 
 
 
