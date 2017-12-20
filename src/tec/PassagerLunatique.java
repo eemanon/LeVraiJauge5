@@ -30,6 +30,6 @@ public class PassagerLunatique extends PassagerAbstrait implements Passager, Usa
 	@Override
 	protected void choixChangerPlace(Bus b, int arret) {
 		// TODO Auto-generated method stub
-		
 	}
+	
 }

@@ -66,8 +66,10 @@ Pourquoi faut-il mieux déclarer les autres méthodes de la classes PassagerAbstra
 - Pour faire en sorte que les objets dérivées gardent un état consistant
 
 ## 4 Factoriser les Tests
-3. Sept tests sont exéctés.
- 
+3. Sept tests sont exécutés.
+4. Sept tests sont également exécutés car les tests sont hérités de PassagerAbstraitTest.
+1.Un Passager abstrait est à la fois un Usager et un Passager.
+
 
 
 

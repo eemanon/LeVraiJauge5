@@ -32,6 +32,5 @@ public class PassagerStresse extends PassagerAbstrait implements Passager, Usage
 	@Override
 	protected void choixChangerPlace(Bus b, int arret) {
 		// TODO Auto-generated method stub
-		
 	}
 }
