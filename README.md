@@ -66,7 +66,7 @@ Pourquoi faut-il mieux déclarer les autres méthodes de la classes PassagerAbstra
 - Pour faire en sorte que les objets dérivées gardent un état consistant
 
 ## 4 Factoriser les Tests
-
+3. Sept tests sont exéctés.
 
 
 
