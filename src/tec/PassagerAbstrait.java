@@ -24,53 +24,62 @@ public abstract class PassagerAbstrait implements Passager, Usager{
 		this(PassagerAbstrait.class.toString()+destination, destination);
 	}
 	@Override 
-	public String nom() {
+	public final String nom() {
 		return nom;
 	}
 
 	@Override
-	public boolean estDehors() {
+	public final boolean estDehors() {
 		if (etat.estExterieur())
 			return true;
 		return false;
 	}
 
 	@Override
-	public boolean estAssis() {
+	public final boolean estAssis() {
 		if(etat.estAssis())
 			return true;
 		return false;
 	}
 
 	@Override
-	public boolean estDebout() {
+	public final boolean estDebout() {
 		if(etat.estDebout())
 			return true;
 		return false;
 	}
 
 	@Override
-	public void accepterSortie() {
+	public final void accepterSortie() {
 		etat.setMonEtat(Etat.dehors);
 	}
 
 	@Override
-	public void accepterPlaceAssise() {
+	public final void accepterPlaceAssise() {
 		etat.setMonEtat(Etat.assis);
 		
 	}
 
 	@Override
-	public void accepterPlaceDebout() {
+	public final void accepterPlaceDebout() {
 		etat.setMonEtat(Etat.debout);
 		
 	}
+	protected abstract void choixPlaceMontee(Bus b);
+	
+	protected abstract void choixChangerPlace(Bus b, int arret);
 
 	@Override
-	public abstract void nouvelArret(Bus bus, int numeroArret);
+	public void nouvelArret(Bus bus, int numeroArret) {
+		if(numeroArret==this.getDestination())
+			bus.demanderSortie(this);	
+		choixChangerPlace(bus, numeroArret);
+	};
 
 	@Override
-	public abstract void monterDans(Transport t) throws UsagerInvalideException;
+	public void monterDans(Transport t) throws UsagerInvalideException{
+		choixPlaceMontee((Bus)t);
+	};
 
 	@Override
 	public String toString() {

@@ -47,6 +47,29 @@ implementé dans la classe de base, le constructeur "défaut" n'est plus dispo et 
 le constructeur implementé. Si le constructeur sans paramètres n'est pas implémenté dans la classe de base, un tentative appel
 à partir d'une classe de fille échoue (et donc aussi l'appel automatique du constructeur "défaut").
 
+## 3 Définir ce qu’il faut paramtrer
+Vous remarquez que tout le code n’est pas à changer, une partie est à dupliquer. Cette partie
+doit d’ailleurs être présente dans toutes les classe d'arivée. Comment factoriser ce code commun
+obligatoire dans la classe de base ?
+- Le code commun à toute sous-classe de passager abstraite et celui qui permet au passager de descendre.
+On pourrait le définir dans la classe de base et faire en sorte que les sous-classes s'en servent avant
+d'appliquer leur comportement spécifique. Pour cela, la methode 
+
+Déclarer deux méthodes abstraites choixChangerPlace() et choixPlaceMontee()
+dans la classe PassagerAbstrait. Pourquoi les déclarer abstraites?
+- Pour faire en sorte que les  restent toujours à implementer lors de l'heritage des classes dérivées
+
+Ces deux méthodes sont-elles privées, publiques ou protégées ?
+- Elles sont protected, seule les sous-classes en ont besoin.
+
+Pourquoi faut-il mieux déclarer les autres méthodes de la classes PassagerAbstrait comme finales ?
+- Pour faire en sorte que les objets dérivées gardent un état consistant
+
+## 4 Factoriser les Tests
+
+
+
+
 
 
 

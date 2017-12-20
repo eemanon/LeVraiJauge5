@@ -1,17 +1,10 @@
 package tec;
 
-import tec.EtatPassager.Etat;
-
-/**
- * Passager, contructeur avec le nom et la destination (numéro d'arret)
- * 
- */
-
-public class PassagerStandard extends PassagerAbstrait implements Passager, Usager{	
-	public PassagerStandard(String string, int i) {
+public class PassagerLunatique extends PassagerAbstrait implements Passager, Usager{	
+	public PassagerLunatique(String string, int i) {
 		super(string, i);
 	}
-	public PassagerStandard(int destination) {
+	public PassagerLunatique(int destination) {
 		super(PassagerStandard.class.toString()+destination, destination);
 	}
 
@@ -20,14 +13,14 @@ public class PassagerStandard extends PassagerAbstrait implements Passager, Usag
 		super.nouvelArret(bus, numeroArret);
 		if(this.estAssis())
 			bus.demanderPlaceDebout(this);
+		if(this.estDebout())
+			bus.demanderPlaceAssise(this);
 	}
 
 	@Override
 	public void monterDans(Transport t) throws UsagerInvalideException {
 		Bus b = (Bus)t;
-		b.demanderPlaceAssise(this);
-		if(this.estDehors())
-			b.demanderPlaceDebout(this);
+		b.demanderPlaceDebout(this);
 	}
 	@Override
 	protected void choixPlaceMontee(Bus b) {
@@ -38,5 +31,5 @@ public class PassagerStandard extends PassagerAbstrait implements Passager, Usag
 	protected void choixChangerPlace(Bus b, int arret) {
 		// TODO Auto-generated method stub
 		
-	}	
+	}
 }
